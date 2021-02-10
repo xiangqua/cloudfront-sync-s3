@@ -20,3 +20,5 @@ S3_Prefix = 'www'
 部署脚本参考 uploadfile_worker.py，修改脚本中的DesBucket（目标S3桶）和srcurl（使用CloudFront创建分配，CloudFront分配的域名例如： 'http://d1zi40b7x5dwgb.cloudfront.net/'）
 
 ### 4、配置cloudwatch event，定时触发lambda函数 uploadfile
+
+### 5、可以通过单独部署compare_bucket.py来对比同步状态，上传同步状态文件
