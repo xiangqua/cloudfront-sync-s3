@@ -33,7 +33,13 @@ uploadfile_worker.py ：下载文件执行程序
 ### 1、创建CloudFront分配，分配源指向源S3桶
 
 ### 2、创建lambda函数 uploadfile
-部署脚本参考uploadfile.py ，修改配置文件中的SrcBucket(源S3桶) DesBucket（目标S3桶），S3_Prefix(同步文件在S3中的前缀)
+部署脚本参考uploadfile.py 
+
+修改配置文件中的SrcBucket(源S3桶) 
+
+DesBucket（目标S3桶）
+
+S3_Prefix(同步文件在S3中的前缀)
 
 SrcBucket = 'quandata1'
 
