@@ -9,6 +9,12 @@ Amazon CloudFront 是一项快速内容分发网络 (CDN) 服务，可以安全�
 ## 架构说明
 <img src="https://user-images.githubusercontent.com/75667661/128048056-824ffd31-e223-4c96-9930-79cb7c5a1c22.png" width="500" height="300"/><br/>
 
+## 部署说明
+compare_bucket.py    ：用于对比两边存储桶的差异，定时调度
+
+uploadfile.py        ：调度lambda，用于判断同步文件，触发其他lambda下载文件
+
+uploadfile_worker.py ：下载文件执行程序
 
 
 ## 使用说明
