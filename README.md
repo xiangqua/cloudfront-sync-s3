@@ -9,6 +9,17 @@ Amazon CloudFront 是一项快速内容分发网络 (CDN) 服务，可以安全�
 ## 架构说明
 <img src="https://user-images.githubusercontent.com/75667661/128048056-824ffd31-e223-4c96-9930-79cb7c5a1c22.png" width="500" height="300"/><br/>
 
+## 功能说明
+
+-具备文件同步功能
+
+-具备多线程并发下载和上传功能
+
+-具备文件同步状态对比功能
+
+-具备遗漏文件重新同步功能
+
+
 ## 部署说明
 compare_bucket.py    ：用于对比两边存储桶的差异，定时调度
 
@@ -35,4 +46,9 @@ S3_Prefix = 'www'
 
 ### 4、配置cloudwatch event，定时触发lambda函数 uploadfile
 
-### 5、可以通过单独部署compare_bucket.py来对比同步状态，上传同步状态文件
+按实际需要定期进行文件同步，周期通过cloudwatch event控制
+
+### 5、同步状态对比和监控
+
+可以通过单独部署compare_bucket.py来对比同步状态，上传同步状态文件
+脚本通过cloudwatch event来调度，定时进行对比
