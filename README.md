@@ -7,25 +7,26 @@ AWS提供了多种实现S3跨region数据同步的方式，但不论采用哪种
 Amazon CloudFront 是一项快速内容分发网络 (CDN) 服务，可以安全地以低延迟和高传输速度向全球客户分发数据、视频、应用程序和 API，全部都在开发人员友好的环境中完成。Amazon CloudFront 可以大幅扩容，并在全球范围内分布。CloudFront 网络拥有 225 个以上的存在点 (PoP)，这些存在点通过 AWS 主干网相互连接，为最终用户提供超低延迟性能和高可用性。
 
 ## 架构说明
-<img src="https://user-images.githubusercontent.com/75667661/128048056-824ffd31-e223-4c96-9930-79cb7c5a1c22.png" width="500" height="300"/><br/>
+<img src="https://user-images.githubusercontent.com/75667661/136678283-0d6557be-d113-4251-98aa-15d6d367de32.png" width="900" height="400"/><br/>
+
 
 ## 功能说明
 
--具备文件同步功能
+* 具备文件同步功能
 
--可改造多线程并发下载和上传
+* 可改造多线程并发下载和上传
 
--具备文件同步状态对比功能
+* 具备文件同步状态对比功能
 
--具备遗漏文件重新同步功能
+* 具备遗漏文件重新同步功能
 
 
 ## 部署说明
-compare_bucket.py    ：用于对比两边存储桶的差异，定时调度
+* compare_bucket.py    ：用于对比两边存储桶的差异，定时调度
 
-uploadfile.py        ：调度lambda，用于判断同步文件，触发其他lambda下载文件
+* uploadfile.py        ：调度lambda，用于判断同步文件，触发其他lambda下载文件
 
-uploadfile_worker.py ：下载文件执行程序
+* uploadfile_worker.py ：下载文件执行程序
 
 
 ## 使用说明
